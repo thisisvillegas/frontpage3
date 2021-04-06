@@ -1,0 +1,110 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 40% 0 0 0;
+}
+
+.grid {
+    display: flex; /* establish flex container */
+    flex-wrap: wrap; /* enable flex items to wrap */
+    justify-content: space-around;
+}
+.cell {
+    flex: 1 0 32%; /* don't grow, don't shrink, width */
+    height: 34vh;
+    /* border: 1px groove black; */
+    background-color: transparent;
+    text-align: center;
+    /* padding-top: 45%; */
+}
+.cellLong {
+    flex: 1 0 99%; /* don't grow, don't shrink, width */
+    height: 34vh;
+    /* border: 2px groove black; */
+    background-color: transparent;
+}
+.slogan {
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    margin: 0 30% 0 30%;
+}
+
+.weather {
+    color: white;
+    font-size: 1.5em;
+    margin: 18% 25% 0 25%;
+}
+
+.weather p,
+h4,
+h3 {
+    margin: 0;
+    text-align: center;
+}
+/* .weather h4 {
+	margin: 0;
+} */
+.liverpool {
+    color: white;
+    font-size: 1.5em;
+    margin: 15% 10% 0 10%;
+}
+.teamBadge {
+    margin: auto;
+    display: inline-block;
+}
+.teamBadge p {
+    display: inline;
+}
+.teamBadge img {
+    display: block;
+    margin: auto;
+}
+.time {
+    color: white;
+    font-size: 2.6em;
+    margin: 2em;
+}
+img {
+    max-width: 70px;
+}
+body {
+    background-size: cover;
+    height: 100vh;
+    /* padding: 0; */
+    /* margin: 0; */
+    font-family: 'Alegreya SC';
+}
+body.class1 {
+    background-image: url('../src/img/TankPlanet.gif');
+}
+body.class2 {
+    background-image: url('../src/img/CitySideScroller.gif');
+}
+body.class3 {
+    background-image: url('../src/img/CarIntoCity.gif');
+}
+body.class4 {
+    background-image: url('../src/img/Tree.gif');
+}
+body.class5 {
+    background-image: url('../src/img/highway1.gif');
+}
+body.class6 {
+    background-image: url('../src/img/sphere.gif');
+}
+
+ul {
+    text-align: center;
+    list-style-type: none;
+    font-size: 1.4em;
+    line-height: 1em;
+    padding: 0;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
