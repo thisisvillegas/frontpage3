@@ -1,17 +1,14 @@
-import React, {Component} from 'react';
-import '../frontpage.css';
 import '@openfonts/alegreya-sc_all';
-import Table from './table.component';
+import React, { Component } from 'react';
+// import Weatherv3 from './weatherv3.component';
+import list from '../data/sample.json';
+import '../frontpage.css';
 import Clock from './clock.component';
-// import Weather from './weather.component';
-import Liverpool from './liverpool.component';
 // import Slogan from './slogan.component';
 import Geolocation from './geolocation.component';
-import axios from 'axios';
-import Weatherv3 from './weatherv3.component';
-
-import list from '../data/sample.json';
-import Weather from './weather.component';
+// import Weather from './weather.component';
+import Liverpool from './liverpool.component';
+import Table from './table.component';
 // import { render } from '@testing-library/react';
 
 // import Paper from '@material-ui/core/Paper';
@@ -116,9 +113,7 @@ export default class frontpage extends Component {
                 </div>
                 <div className="cell">
                     <Geolocation />
-                    <Weatherv3 />
                 </div>
-
                 <div className="cellLong">
                     {/* <Slogan /> */}
                     {console.log(
