@@ -1,5 +1,5 @@
 import '@openfonts/alegreya-sc_all';
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 // import Weatherv3 from './weatherv3.component';
 import list from '../data/sample.json';
 import '../frontpage.css';
@@ -9,6 +9,7 @@ import Geolocation from './geolocation.component';
 // import Weather from './weather.component';
 import Liverpool from './liverpool.component';
 import Table from './table.component';
+import CryptoStats from './crypto.component';
 // import { render } from '@testing-library/react';
 
 // import Paper from '@material-ui/core/Paper';
@@ -16,7 +17,7 @@ import Table from './table.component';
 
 function backgroundPicker() {
     let backgroundPick = Math.floor(Math.random() * 6);
-    console.log(`Class${backgroundPick}`);
+    // console.log(`Class${backgroundPick}`);
     return backgroundPick;
 }
 
@@ -102,7 +103,7 @@ export default class frontpage extends Component {
     }
 
     render() {
-        console.log('this.state in FP', this.state);
+        // console.log('this.state in FP', this.state);
         return (
             <div className="grid">
                 <div className="cell">
@@ -116,15 +117,16 @@ export default class frontpage extends Component {
                 </div>
                 <div className="cellLong">
                     {/* <Slogan /> */}
-                    {console.log(
+                    {/* {console.log(
                         'this.state.config before calling table',
                         this.state.config
-                    )}
+                    )} */}
                     <Table payload={list} />
                 </div>
 
                 <div className="cell"></div>
                 <div className="cell">
+                    <CryptoStats></CryptoStats>
                     <div
                         className="button"
                         onClick={() => {
