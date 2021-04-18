@@ -96,6 +96,11 @@ h3 {
         font-size: 1.1em;
         margin: 10% 0 0 0;
     }
+    .weather {
+        color: white;
+        font-size: 1em;
+        margin: 10% 0 0 0;
+    }
 }
 img {
     max-width: 70px;
