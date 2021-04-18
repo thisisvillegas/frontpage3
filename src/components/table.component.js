@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 const CreateLists2 = props => {
-    console.log('props', props);
+    // console.log('props', props);
     if (props.data) {
         return (
             <tr>
@@ -238,7 +238,7 @@ const CreateLists2 = props => {
 
 export default class Table extends Component {
     render() {
-        console.log('this.props.list1', this.props);
+        // console.log('this.props.list1', this.props);
         return (
             <table align="center">
                 <tbody>
