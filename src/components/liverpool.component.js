@@ -12,8 +12,7 @@ class liverpoolStats extends Component {
             headers: {
                 'content-type': 'application/octet-stream',
                 'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
-                'x-rapidapi-key':
-                    'e4107e33e5msh76c70dcc39cafacp14663bjsn1ede35f0193b',
+                'x-rapidapi-key': `${process.env.RAPIDAPI_KEY}`,
                 useQueryString: true,
             },
         })
@@ -32,8 +31,7 @@ class liverpoolStats extends Component {
             url: 'https://api-football-v1.p.rapidapi.com/v3/standings',
             params: {season: '2020', league: '39', team: '40'},
             headers: {
-                'x-rapidapi-key':
-                    'e4107e33e5msh76c70dcc39cafacp14663bjsn1ede35f0193b',
+                'x-rapidapi-key': `${process.env.RAPIDAPI_KEY}`,
                 'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
             },
         })
@@ -50,7 +48,7 @@ class liverpoolStats extends Component {
             });
     }
     render() {
-        console.log('liverpool.state', this.state);
+        // console.log('liverpool.state', this.state);
         return (
             <div className="liverpool">
                 {this.state.awayTeam ? (
