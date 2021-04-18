@@ -47,6 +47,20 @@
             "url": "https://www.paypal.com/"
         }
     },
+    "list3": {
+        "link1": {
+            "name": "Revzilla",
+            "url": "https://www.wellsfargo.com/"
+        },
+        "link2": {
+            "name": "Coinbase",
+            "url": "https://www.capitalone.com/"
+        },
+        "link3": {
+            "name": "MotoGP",
+            "url": "https://www.motogp.com/en/calendar"
+        }
+    },
     "modules": {
         "time": {
             "enabled": true,
