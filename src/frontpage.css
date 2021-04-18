@@ -12,7 +12,7 @@
     justify-content: space-around;
 }
 .cell {
-    flex: 1 0 32%; /* don't grow, don't shrink, width */
+    flex: 1 0 15%; /* don't grow, don't shrink, width */
     height: 34vh;
     /* border: 1px groove black; */
     background-color: transparent;
@@ -21,7 +21,8 @@
 }
 .cellLong {
     flex: 1 0 99%; /* don't grow, don't shrink, width */
-    height: 34vh;
+    height: 25vh;
+    margin: 3% 0 0 0;
     /* border: 2px groove black; */
     background-color: transparent;
 }
@@ -55,6 +56,7 @@ h3 {
 .crypto {
     color: white;
     font-size: 1.5em;
+    margin: 10% 0 0 0;
 }
 .teamBadge {
     margin: auto;
@@ -69,8 +71,31 @@ h3 {
 }
 .time {
     color: white;
-    font-size: 2.6em;
-    margin: 2em;
+    font-size: 2.2em;
+    margin: 20% 10% 10% 10%;
+}
+@media screen and (max-width: 600px) {
+    .time {
+        font-size: 1.6em;
+        margin: 10%;
+    }
+    .liverpool {
+        font-size: 1em;
+        margin: 15% 10% 0 10%;
+    }
+    .cell {
+        height: 22vh;
+        margin: 10% 0 0 0;
+    }
+    .cellLong {
+        height: 22vh;
+        margin: 10% 0 0 0;
+    }
+    .crypto {
+        color: white;
+        font-size: 1.1em;
+        margin: 10% 0 0 0;
+    }
 }
 img {
     max-width: 70px;
@@ -78,6 +103,8 @@ img {
 body {
     background-size: cover;
     height: 100vh;
+    background-position: center center; /* First value is from left and second is from top. You can use use number as well*/
+    background-repeat: no-repeat;
     /* padding: 0; */
     /* margin: 0; */
     font-family: 'Alegreya SC';

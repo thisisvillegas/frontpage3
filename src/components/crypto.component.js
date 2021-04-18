@@ -44,17 +44,15 @@ class cryptoStats extends Component {
         console.log('crypto.state', this.state);
         return (
             <div className="crypto">
-                <p>ZCash {this.state.USD}</p>
-                {this.state.history ? (
-                    <p>High {this.state.history.high}</p>
-                ) : (
-                    <p>not loaded</p>
-                )}
-                {this.state.history ? (
-                    <p>Low {this.state.history.low}</p>
-                ) : (
-                    <p>not loaded</p>
-                )}
+                ZCash {this.state.USD}
+                <br />
+                {this.state.history
+                    ? `High ${this.state.history.high}`
+                    : 'not loaded'}
+                <br />
+                {this.state.history
+                    ? `Low ${this.state.history.low}`
+                    : 'not loaded'}
             </div>
         );
     }
