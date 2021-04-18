@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 import moment from 'moment';
 
@@ -27,23 +27,44 @@ class liverpoolStats extends Component {
                 console.log(error);
             });
 
-        // axios
-        //     .get()
-        //     .then(res => {
-        //         this.setState({
-        //             ...res.data,
-        //         });
-        //     })
-        //     .catch(err => console.log(err));
+        axios({
+            method: 'GET',
+            url: 'https://api-football-v1.p.rapidapi.com/v3/standings',
+            params: {season: '2020', league: '39', team: '40'},
+            headers: {
+                'x-rapidapi-key':
+                    'e4107e33e5msh76c70dcc39cafacp14663bjsn1ede35f0193b',
+                'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
+            },
+        })
+            .then(response => {
+                // console.log(
+                //     response.data.response[0].league.standings[0][0].rank
+                // );
+                this.setState({
+                    rank: response.data.response[0].league.standings[0][0].rank,
+                });
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
     render() {
-        // console.log('this.state', this.state);
+        console.log('liverpool.state', this.state);
         return (
             <div className="liverpool">
                 {this.state.awayTeam ? (
                     <div className="teamBadge">
                         <img src={this.state.awayTeam.logo} alt="new" />
-                        <p>{this.state.awayTeam.team_name}</p>
+                        {this.state.awayTeam.team_name === 'Liverpool' ? (
+                            <p>
+                                {this.state.rank}
+                                {'. '}
+                                {this.state.awayTeam.team_name}
+                            </p>
+                        ) : (
+                            <p>{this.state.awayTeam.team_name}</p>
+                        )}
                     </div>
                 ) : (
                     <p>not loaded</p>
