@@ -23,6 +23,10 @@
         "link5": {
             "name": "Xfinity",
             "url": "https://tv.xfinity.com/"
+        },
+        "link6": {
+            "name": "Hulu",
+            "url": "https://Hulu.com/"
         }
     },
     "list2": {
@@ -54,11 +58,15 @@
         },
         "link2": {
             "name": "Coinbase",
-            "url": "https://www.capitalone.com/"
+            "url": "https://www.coinbase.com/dashboard"
         },
         "link3": {
             "name": "MotoGP",
             "url": "https://www.motogp.com/en/calendar"
+        },
+        "link4": {
+            "name": "iCloud",
+            "url": "https://www.icloud.com/iclouddrive/"
         }
     },
     "modules": {
