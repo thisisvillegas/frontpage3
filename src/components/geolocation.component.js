@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {geolocated} from 'react-geolocated';
+// import {geolocated} from 'react-geolocated';
+import { useGeolocated } from "react-geolocated"
 import Weather from './weather.component';
 
 class WeatherV2 extends Component {
@@ -24,9 +25,4 @@ class WeatherV2 extends Component {
     }
 }
 
-export default geolocated({
-    positionOptions: {
-        enableHighAccuracy: false,
-    },
-    userDecisionTimeout: 5000,
-})(WeatherV2);
+export default WeatherV2;
