@@ -1,25 +1,28 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import moment from 'moment';
+// import 'dotenv/config'
 
 class liverpoolStats extends Component {
+    
     state = {};
     componentDidMount() {
         axios({
             method: 'GET',
-            url:
-                'https://api-football-v1.p.rapidapi.com/v2/fixtures/team/40/next/1?timezone=America/Chicago',
+            url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures',
+            params: {season: '2022', team: '40', timezone:'America/Chicago'},
             headers: {
-                'content-type': 'application/octet-stream',
                 'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
-                'x-rapidapi-key': `${process.env.RAPIDAPI_KEY}`,
-                useQueryString: true,
+                'x-rapidapi-key': `e4107e33e5msh76c70dcc39cafacp14663bjsn1ede35f0193b`,
+                // 'x-rapidapi-key': `${process.env.rapid_api_key}`,
             },
         })
             .then(response => {
-                // console.log(response.data.api.fixtures[0]);
+                console.log('this is env', process.env.RAPID_API_KEY)
+                console.log('fixture api:',response.data.response[0].teams);
                 this.setState({
-                    ...response.data.api.fixtures[0],
+                    date: response.data.response[0].fixture.date,
+                    ...response.data.response[0].teams,
                 });
             })
             .catch(error => {
@@ -29,16 +32,16 @@ class liverpoolStats extends Component {
         axios({
             method: 'GET',
             url: 'https://api-football-v1.p.rapidapi.com/v3/standings',
-            params: {season: '2020', league: '39', team: '40'},
+            params: {season: '2022', league: '39', team: '40'},
             headers: {
-                'x-rapidapi-key': `${process.env.RAPIDAPI_KEY}`,
+                'x-rapidapi-key': `e4107e33e5msh76c70dcc39cafacp14663bjsn1ede35f0193b`,
                 'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
             },
         })
             .then(response => {
-                // console.log(
-                //     response.data.response[0].league.standings[0][0].rank
-                // );
+                console.log(
+                    // response.data.response[0].league.standings[0][0].rank
+                );
                 this.setState({
                     rank: response.data.response[0].league.standings[0][0].rank,
                 });
@@ -48,37 +51,37 @@ class liverpoolStats extends Component {
             });
     }
     render() {
-        // console.log('liverpool.state', this.state);
+        console.log('liverpool.state', this.state);
         return (
             <div className="liverpool">
-                {this.state.awayTeam ? (
+                {this.state.away ? (
                     <div className="teamBadge">
-                        <img src={this.state.awayTeam.logo} alt="new" />
-                        {this.state.awayTeam.team_name === 'Liverpool' ? (
+                        <img src={this.state.away.logo} alt="new" />
+                        {this.state.away.name === 'Liverpool' ? (
                             <p>
                                 {this.state.rank}
                                 {'. '}
-                                {this.state.awayTeam.team_name}
+                                {this.state.away.name}
                             </p>
                         ) : (
-                            <p>{this.state.awayTeam.team_name}</p>
+                            <p>{this.state.away.name}</p>
                         )}
                     </div>
                 ) : (
                     <p>not loaded</p>
                 )}
                 {'  @   '}
-                {this.state.homeTeam ? (
+                {this.state.home ? (
                     <div className="teamBadge">
-                        <img src={this.state.homeTeam.logo} alt="new" />
-                        <p>{this.state.homeTeam.team_name}</p>
+                        <img src={this.state.home.logo} alt="new" />
+                        <p>{this.state.home.name}</p>
                     </div>
                 ) : (
                     <p>not loaded</p>
                 )}
-                {this.state.event_date ? (
+                {this.state.date ? (
                     <h4>
-                        {moment(this.state.event_date).format('MMMM Do YYYY')}
+                        {moment(this.state.date).format('MMMM Do YYYY')}
                     </h4>
                 ) : (
                     <h4>not loaded</h4>

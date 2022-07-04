@@ -1,0 +1,68 @@
+{
+  "_id": {
+    "$oid": "5f4e7c27902e10c646250d28"
+  },
+  "username": "andres",
+
+  "modules": {
+    "time": {
+      "enabled": true,
+      "timezone": "American/Chicago"
+    },
+    "weather": {
+      "enabled": true
+    },
+    "sports": {
+      "enabled": true,
+      "team": "Liverpool",
+      "teamID": {
+        "$numberLong": "40"
+      }
+    }
+  },
+  "tableData": [
+    { "column": 1, "name": "Reddit", "url": "https://old.reddit.com/" },
+    { "column": 1, "name": "eMail", "url": "https://gmail.com/" },
+    { "column": 1, "name": "Netflix", "url": "https://netflix.com/" },
+    { "column": 1, "name": "Xfinity", "url": "https://tv.xfinity.com/" },
+    { "column": 1, "name": "Hulu", "url": "https://Hulu.com/" },
+    {
+      "column": 2,
+      "name": "Wells Fargo",
+      "url": "https://www.wellsfargo.com/"
+    },
+    {
+      "column": 2,
+      "name": "Capital One",
+      "url": "https://www.capitalone.com/"
+    },
+    {
+      "column": 2,
+      "name": "AMEX",
+      "url": "https://www.americanexpress.com/?inav=NavLogo"
+    },
+    { "column": 2, "name": "UFCU", "url": "https://www.ufcu.org/" },
+    { "column": 2, "name": "PayPal", "url": "https://www.paypal.com/" },
+    { "column": 3, "name": "Revzilla", "url": "https://www.wellsfargo.com/" },
+    {
+      "column": 3,
+      "name": "Coinbase",
+      "url": "https://www.coinbase.com/dashboard"
+    },
+    {
+      "column": 3,
+      "name": "MotoGP",
+      "url": "https://www.motogp.com/en/calendar"
+    },
+    {
+      "column": 3,
+      "name": "iCloud",
+      "url": "https://www.icloud.com/iclouddrive/"
+    },
+    {
+        "column": 3,
+        "name": "AWS",
+        "url": "https://us-east-1.console.aws.amazon.com/amplify/home?region=us-east-1#/"
+      }
+  ]
+}

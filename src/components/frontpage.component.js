@@ -1,19 +1,15 @@
 import '@openfonts/alegreya-sc_all';
 import React, {Component} from 'react';
-// import Weatherv3 from './weatherv3.component';
-import list from '../data/sample.json';
+// import list from '../data/sample.json';
 import '../frontpage.css';
 import Clock from './clock.component';
 // import Slogan from './slogan.component';
-import Geolocation from './geolocation.component';
-// import Weather from './weather.component';
+import Geolocation from './geolocationV3.component';
 import Liverpool from './liverpool.component';
-import Table from './table.component';
+// import Table from './table.component';
+import Table from './tableV3.component';
 import CryptoStats from './crypto.component';
-// import { render } from '@testing-library/react';
 
-// import Paper from '@material-ui/core/Paper';
-// import Grid from '@material-ui/core/Grid';
 
 function backgroundPicker() {
     let backgroundPick = Math.floor(Math.random() * 6);
@@ -121,7 +117,8 @@ export default class frontpage extends Component {
                         'this.state.config before calling table',
                         this.state.config
                     )} */}
-                    <Table payload={list} />
+                    <Table />
+                    {/* <Table payload={list} /> */}
                 </div>
 
                 <div className="cell"></div>
