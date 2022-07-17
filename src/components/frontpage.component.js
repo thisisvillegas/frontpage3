@@ -7,8 +7,8 @@ import Geolocation from "./geolocationV3.component";
 import Liverpool from "./liverpool.component";
 import AustinFC from "./austinFC.component";
 import Table from "./tableV3.component";
-import CryptoStats from "./crypto.component";
-import Modal from "./modalV2.component";
+// import CryptoStats from "./crypto.component";
+// import Modal from "./modalV2.component";
 import BibleVerse from "./bibleVerse.component";
 
 function backgroundPicker() {
@@ -120,14 +120,14 @@ export default class frontpage extends Component {
           <Geolocation />
         </div>
         <div className="cell">
-          {/* <Liverpool /> */}
+          <Liverpool />
         </div>
         <div className="cell">
           <Table />
           {/* <Table payload={list} /> */}
         </div>
         <div className="cell">
-          {/* <AustinFC /> */}
+          <AustinFC />
         </div>
         <div className="cellLong">
           <BibleVerse />

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import list from "../data/userInfo.json";
-import axios from "axios";
+// import axios from "axios";
 
 const TableColumn = (columnNumber) => {
   let returnArray = [];
@@ -17,7 +17,7 @@ const TableColumn = (columnNumber) => {
 };
 
 const Table = () => {
-  const [tableData, setTableData] = useState(list.tableData);
+  // const [tableData, setTableData] = useState(list.tableData);
 
   return (
     <div>
