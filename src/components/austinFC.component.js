@@ -1,25 +1,21 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import moment from 'moment';
-// import 'dotenv/config'
 
-//16489 Austin FC team number
-
-class liverpoolStats extends Component {
+class austinStats extends Component {
     
     state = {};
     componentDidMount() {
         axios({
             method: 'GET',
             url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures',
-            params: {season: '2022', team: '40', timezone:'America/Chicago', next:'1'},
+            params: {season: '2022', team: '16489', timezone:'America/Chicago', next:'1'},
             headers: {
                 'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
                 'x-rapidapi-key': `${process.env.REACT_APP_RAPID_API_KEY}`,
             },
         })
             .then(response => {
-                console.log('this is env', process.env.RAPID_API_KEY)
                 console.log('fixture api:',response.data.response[0].teams);
                 this.setState({
                     date: response.data.response[0].fixture.date,
@@ -33,15 +29,15 @@ class liverpoolStats extends Component {
         axios({
             method: 'GET',
             url: 'https://api-football-v1.p.rapidapi.com/v3/standings',
-            params: {season: '2022', league: '39', team: '40'},
+            params: {season: '2022', league: '253', team: '16489'},
             headers: {
-                'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
                 'x-rapidapi-key': `${process.env.REACT_APP_RAPID_API_KEY}`,
+                'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
             },
         })
             .then(response => {
                 console.log(
-                    // response.data.response[0].league.standings[0][0].rank
+                    response.data.response[0].league.standings[0][0].rank
                 );
                 this.setState({
                     rank: response.data.response[0].league.standings[0][0].rank,
@@ -52,13 +48,13 @@ class liverpoolStats extends Component {
             });
     }
     render() {
-        console.log('liverpool.state', this.state);
+        console.log('austin.state', this.state);
         return (
             <div className="liverpool">
                 {this.state.away ? (
                     <div className="teamBadge">
                         <img src={this.state.away.logo} alt="new" />
-                        {this.state.away.name === 'Liverpool' ? (
+                        {this.state.away.name === 'Austin' ? (
                             <p>
                                 {this.state.rank}
                                 {'. '}
@@ -75,7 +71,7 @@ class liverpoolStats extends Component {
                 {this.state.home ? (
                     <div className="teamBadge">
                         <img src={this.state.home.logo} alt="new" />
-                        {this.state.home.name === 'Liverpool' ? (
+                        {this.state.home.name === 'Austin' ? (
                             <p>
                                 {this.state.rank}
                                 {'. '}
@@ -100,4 +96,4 @@ class liverpoolStats extends Component {
     }
 }
 
-export default liverpoolStats;
+export default austinStats;

@@ -12,7 +12,7 @@
     justify-content: space-around;
 }
 .cell {
-    flex: 1 0 15%; /* don't grow, don't shrink, width */
+    flex: 1 0 30%; /* don't grow, don't shrink, width */
     height: 34vh;
     /* border: 1px groove black; */
     background-color: transparent;
@@ -49,6 +49,16 @@ h3 {
 	margin: 0;
 } */
 .liverpool {
+    color: white;
+    font-size: 1.5em;
+    margin: 15% 10% 0 10%;
+}
+.bibleVerse {
+    color: white;
+    font-size: 1.5em;
+    margin: 2% 10% 0 10%;
+}
+.sports {
     color: white;
     font-size: 1.5em;
     margin: 15% 10% 0 10%;

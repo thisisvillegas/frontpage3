@@ -41,7 +41,7 @@ class cryptoStats extends Component {
             });
     }
     render() {
-        console.log('crypto.state', this.state);
+        // console.log('crypto.state', this.state);
         return (
             <div className="crypto">
                 ZCash {this.state.USD}

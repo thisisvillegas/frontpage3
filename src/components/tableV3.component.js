@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import list from "../data/userInfo.json";
+import axios from "axios";
 
 const TableColumn = (columnNumber) => {
   let returnArray = [];
@@ -16,8 +17,7 @@ const TableColumn = (columnNumber) => {
 };
 
 const Table = () => {
-  const tableData = useState(list.tableData);
-  console.log(TableColumn(2))
+  const [tableData, setTableData] = useState(list.tableData);
 
   return (
     <div>
