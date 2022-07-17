@@ -120,14 +120,14 @@ export default class frontpage extends Component {
           <Geolocation />
         </div>
         <div className="cell">
-          <Liverpool />
+          {/* <Liverpool /> */}
         </div>
         <div className="cell">
           <Table />
           {/* <Table payload={list} /> */}
         </div>
         <div className="cell">
-          <AustinFC />
+          {/* <AustinFC /> */}
         </div>
         <div className="cellLong">
           <BibleVerse />
