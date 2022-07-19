@@ -14,7 +14,7 @@ class austinStats extends Component {
       },
     })
       .then((response) => {
-        console.log("bibleVerse api:", response.data[0].text);
+        // console.log("bibleVerse api:", response.data[0].text);
         this.setState({
             ...response.data[0],
         });
@@ -24,7 +24,7 @@ class austinStats extends Component {
       });
   }
   render() {
-    console.log("bible.state", this.state);
+    // console.log("bible.state", this.state);
     let googleSearchString = `https://google.com/search?q=${this.state.book_name}+${this.state.chapter}+${this.state.verse}`
     return (
       <div className="bibleVerse">
